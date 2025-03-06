@@ -11,8 +11,8 @@
 npx exsan172/shared-types-init
 ```
 
-<h3>Now you can using types in project. and you can publish in github or gitlab to share with other backend or frontend (public or private). build your type first, before upload to git so that use in frontend or other backend.</h3>
-
+<span>Now you can using types in project. and you can publish in github or gitlab to share with other backend or frontend (public or private). build your type first, before upload to git so that use in frontend or other backend.</span>
+<br/>
 
 ```
 import { Hono } from 'hono'
@@ -53,7 +53,10 @@ npm i github:username/your-repository.git
 npm i git+https://gitlab.com/username/your-repository.git
 ```
 
-<h3>Using in components or pages</h3>
+<br/>
+<span>Using in the types</span>
+<br/>
+<br/>
 
 ```
 import { EnumUserRoles } from "@exsan172/shared-types"
