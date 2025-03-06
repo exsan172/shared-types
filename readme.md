@@ -25,9 +25,9 @@ npx exsan172/shared-types-init
   ...
 ```
 
-<span>You can edit file inside `/shared-types/src` to create your own types, make sure import types in `index.ts` file</span>
+<span>You can edit file inside `/shared-types/src` to create your own types, make sure import types in `index.ts` file.</span>
 <br/>
-<span>Now you can using types in project. and you can publish in github or gitlab to share with other backend or frontend (public or private). build your type first, before upload to git so that use in frontend or other backend.</span>
+<span>Now you can using types in backend project. and you can publish in github or gitlab to share with other backend or frontend (public or private). build your type first, before upload to git so that use in frontend or other backend.</span>
 <br/>
 
 ```
@@ -78,4 +78,17 @@ npm i git+https://gitlab.com/username/your-repository.git
 import { EnumUserRoles } from "@exsan172/shared-types"
 
 EnumUserRoles.ADMIN // works
+```
+<br/>
+<h2>Tip :</h2>
+<span>If you want to update types but when you run npm i ... it doesn't update. delete `@exsan172/shared-types` in package.json, and add #last_commit when running npm i ... for example:<span>
+<br/>
+<br/>
+
+```
+- GITHUB
+npm i github:username/your-repository.git#1dec5be8
+
+- GITLAB
+npm i git+https://gitlab.com/username/your-repository.git#1dec5be8
 ```
