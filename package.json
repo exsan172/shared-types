@@ -1,5 +1,5 @@
 {
-    "name": "@exsan/shared-types",
+    "name": "@exsan172/shared-types",
     "version": "1.0.0",
     "description": "Shared TypeScript types for frontend and backend",
     "main": "dist/index.js",
