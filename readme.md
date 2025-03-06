@@ -3,7 +3,7 @@
 <br/>
 
 <h2>USING IN BACKEND (Initialization)</h2>
-<span>First create your project folder, in project run this comand</span>
+<span>First create your project folder, in project run this command</span>
 <br/>
 <br/>
 
@@ -11,6 +11,22 @@
 npx exsan172/shared-types-init
 ```
 
+<span>After run comand, you will see folder call `shared-types`</span>
+
+```
+  your-project-folder
+  - shared-types
+    - src
+      - index.ts
+      - user.ts
+    ...
+
+  - src
+  ...
+```
+
+<span>You can edit file inside `/shared-types/src` to create your own types, make sure import types in `index.ts` file</span>
+<br/>
 <span>Now you can using types in project. and you can publish in github or gitlab to share with other backend or frontend (public or private). build your type first, before upload to git so that use in frontend or other backend.</span>
 <br/>
 
@@ -32,7 +48,7 @@ export default app
 <br/>
 
 ```
-cd share-types
+cd shared-types
 
 git init 
 
