@@ -79,7 +79,6 @@ import { EnumUserRoles } from "@exsan172/shared-types"
 
 EnumUserRoles.ADMIN // works
 ```
-<br/>
 <h2>Tip :</h2>
 <span>If you want to update types but when you run npm i ... it doesn't update. delete `@exsan172/shared-types` in package.json, and add #last_commit when running npm i ... for example:<span>
 <br/>
