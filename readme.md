@@ -43,7 +43,7 @@ cd shared-types
 rm -rf .git
 ```
 
-<h3>Now you can using types in project, and you can publish in github or gitlab public or private</h3>
+<h3>Now you can using types in project, and you can publish in github or gitlab public or private. build your type first before upload to git so that use in frontend.</h3>
 
 ```
 import { Hono } from 'hono'
