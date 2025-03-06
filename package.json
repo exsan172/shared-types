@@ -4,7 +4,9 @@
     "description": "Shared TypeScript types for frontend and backend",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "files": ["dist"],
+    "files": [
+        "dist"
+    ],
     "scripts": {
         "build": "tsc",
         "prepare": "npm run build",
@@ -16,4 +18,4 @@
     },
     "author": "Exsan Renaldhi",
     "license": "MIT"
-}  
+}
