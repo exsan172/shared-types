@@ -18,7 +18,7 @@ export * from "./user";
 <br/>
 
 ```
-Data+{{ API_NAME }}
+RequestData+{{ API_NAME }}
 for : Body params data
 
 Response+{{ API_NAME }}
@@ -29,4 +29,60 @@ for : Send query params in api
 
 Enum+{{ API_NAME }}
 for : Naming enum
+```
+<br/>
+
+<h2>USING IN BACKEND</h2>
+<span>First create your project folder, in project folder clone this repo and remove .git</span>
+<br/>
+
+```
+git clone https://github.com/exsan172/shared-types.git
+
+cd shared-types
+rm -rf .git
+```
+
+<h3>Now you can using types in project, and you can publish in github or gitlab public or private</h3>
+
+```
+import { Hono } from 'hono'
+import { EnumUserRoles } from '../shared-types/src'
+const app = new Hono()
+
+app.get('/', (c) => {
+  return c.text('Hello Hono! '+EnumUserRoles.ADMIN)
+})
+
+export default app
+```
+<br/>
+
+<h2>USING IN FRONTEND</h2>
+
+```
+npm i github:exsan172/shared-types
+
+-- OR --
+
+- GITHUB (PUBLIC)
+npm i github:username/your-repository.git
+
+- GITHUB (PRIVATE)
+You must login github in your terminal first and you can install repository (make sure the repository is shared with you)
+
+- GITLAB (PUBLIC)
+npm i git+https://gitlab.com/username/your-repository.git
+
+- GITLAB (PRIVATE)
+You must login gitlab in your terminal first and you can install repository (make sure the repository is shared with you)
+
+```
+
+<h3>Using in components or pages</h3>
+
+```
+import { EnumUserRoles } from "@exsan172/shared-types"
+
+EnumUserRoles.ADMIN // works
 ```

@@ -1,10 +1,10 @@
-export interface DataUser {
+export interface RequestDataUser {
     id    : number;
     name  : string;
     email : string;
 }
 
-export interface ResponseUser extends DataUser {
+export interface ResponseUser extends RequestDataUser {
     role : EnumUserRoles;
 }
 
