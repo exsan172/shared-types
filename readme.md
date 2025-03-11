@@ -41,23 +41,6 @@ app.get('/', (c) => {
 
 export default app
 ```
-<span>Import to your project</span>
-
-```
-import { Hono } from 'hono'
-import { EnumUserRoles } from '@exsan172/shared-types'
-
-#or direcly call folder ./src/types
-#import { EnumUserRoles } from './src/types'
-
-const app = new Hono()
-
-app.get('/', (c) => {
-  return c.text('Hello Hono! '+EnumUserRoles.ADMIN)
-})
-
-export default app
-```
 
 <span>New clone, if shared-types not instaled yet.</span>
 
@@ -92,15 +75,10 @@ npm i github:username/your-repo
 import { EnumUserRoles } from "@exsan172/shared-types"
 EnumUserRoles.ADMIN
 ```
-<h2>Tip :</h2>
-<span>If you want to update types but when you run npm i ... it doesn't update. delete `@exsan172/shared-types` in package.json, and add #last_commit when running npm i ... for example:<span>
+
+<h3>Example</h3>
+
+<a href="">- Backend Example</a>
 <br/>
 <br/>
-
-```
-- GITHUB
-npm i github:username/your-repository.git#1dec5be8
-
-- GITLAB
-npm i git+https://gitlab.com/username/your-repository.git#1dec5be8
-```
+<a href="">- Frontend Example</a>
