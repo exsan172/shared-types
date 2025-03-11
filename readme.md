@@ -81,4 +81,4 @@ EnumUserRoles.ADMIN
 <a href="https://github.com/exsan172/example-backend-shared-typescript.git">- Backend Example</a>
 <br/>
 <br/>
-<a href="">- Frontend Example</a>
+<a href="https://github.com/exsan172/example-share-types-frontend.git">- Frontend Example</a>
