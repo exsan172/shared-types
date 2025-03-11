@@ -31,6 +31,11 @@ npx github:exsan172/shared-types-init
 
 <span>And you can use in backend like :</span>
 
+```
+npm i github:username/your-repo
+```
+
+<span>Import to your project</span>
 
 ```
 import { Hono } from 'hono'
