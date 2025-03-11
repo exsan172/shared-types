@@ -3,36 +3,44 @@
 <br/>
 
 <h2>USING IN BACKEND (Initialization)</h2>
-<span>First create your project folder, in project run this command</span>
-<br/>
-<br/>
+<h3>Step 1 - run this comand, and publish to your git</h3>
 
 ```
-npx exsan172/shared-types-init
+npx github:exsan172/shared-types-init
 ```
 
 <span>After run comand, you will see folder call `shared-types`</span>
 
 ```
-  your-project-folder
-  - shared-types
+  shared-types
     - src
       - index.ts
       - user.ts
     ...
-
-  - src
-  ...
 ```
 
-<span>You can edit file inside `/shared-types/src` to create your own types, make sure import types in `index.ts` file.</span>
-<br/>
-<span>Now you can using types in backend project. and you can publish in github or gitlab to share with other backend or frontend (public or private). build your type first, before upload to git so that use in frontend or other backend.</span>
-<br/>
+<span>After publish to your git, now you can install in backend and frontend.</span>
+
+<h3>Step 2 - in project folder, create folder to accommodate type, example</h3>
+
+```
+  your-project-folder
+    src
+      types
+        - index.ts
+      ...
+```
+
+<span>And you can use in backend like :</span>
+
 
 ```
 import { Hono } from 'hono'
-import { EnumUserRoles } from '../shared-types/src'
+import { EnumUserRoles } from '@exsan172/shared-types'
+
+#or direcly call folder ./src/types
+#import { EnumUserRoles } from './src/types'
+
 const app = new Hono()
 
 app.get('/', (c) => {
@@ -42,42 +50,20 @@ app.get('/', (c) => {
 export default app
 ```
 
-<h2>HOW TO PUBLISH YOUR TYPES</h2>
-<span>To publish your types just like push repo git</span>
-<br/>
-<br/>
+<h3>Step 3 - publish types</h3>
 
 ```
-cd shared-types
-
-git init 
-
-...
+  cd ./src/types
+  npx shared-types-publish
 ```
 
-<h2>USING IN FRONTEND OR OTHER BACKEND</h2>
+<h3>Step 4 - using in other client</h3>
 
 ```
-npm i github:exsan172/shared-types
+npm i github:username/your-repo
 
--- OR YOUR OWN TYPES --
-
-- GITHUB
-npm i github:username/your-repository.git
-
-- GITLAB
-npm i git+https://gitlab.com/username/your-repository.git
-```
-
-<br/>
-<span>Using in the types</span>
-<br/>
-<br/>
-
-```
 import { EnumUserRoles } from "@exsan172/shared-types"
-
-EnumUserRoles.ADMIN // works
+EnumUserRoles.ADMIN
 ```
 <h2>Tip :</h2>
 <span>If you want to update types but when you run npm i ... it doesn't update. delete `@exsan172/shared-types` in package.json, and add #last_commit when running npm i ... for example:<span>
