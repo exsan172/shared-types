@@ -74,6 +74,11 @@ git pull origin main
 
 ```
   cd shared-types
+
+  - Build first
+  npm run build
+
+  - Publish
   git add .
   git commit -m "update shared-types"
   git push origin main
