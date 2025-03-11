@@ -18,44 +18,29 @@ npx github:exsan172/shared-types-init
 ```
 
 <span>After publish to your git, now you can install in backend and frontend.</span>
+<br/>
+<br/>
 
-<h3>Step 2 - in project folder, create folder to accommodate type, example</h3>
-
-```
-  your-project-folder
-    src
-      types
-        - index.ts
-      ...
-```
-
-<span>And you can use can install in backend :</span>
+<h3>Step 2 - in root project folder, add submodule</h3>
 
 ```
-npm i github:username/your-repo
+git submodule add your-repo.git
 ```
 
-<span>Add this config to tsconfig.json to use import types generally :</span>
+<span>And you can use in backend :</span>
 
 ```
-{
-  "compilerOptions": {
-    ...
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["src/*"]
-    }
-  }
-}
-```
+import { Hono } from 'hono'
+import { EnumUserRoles } from '../shared-types/src'
 
-<span>Example in file ```/src/types/index.ts``` to import generally :</span>
+const app = new Hono()
 
-```
-export * from "./person"
-export * from "@/models/user"
-```
+app.get('/', (c) => {
+  return c.text('Hello Hono '+EnumUserRoles.ADMIN+" !")
+})
 
+export default app
+```
 <span>Import to your project</span>
 
 ```
@@ -74,11 +59,24 @@ app.get('/', (c) => {
 export default app
 ```
 
+<span>New clone, if shared-types not instaled yet.</span>
+
+```
+git submodule update --init --recursive
+
+- or if already shared-types intaled -
+
+git pull origin main
+```
+
+<br/>
 <h3>Step 3 - publish types</h3>
 
 ```
-  cd ./src/types
-  npx shared-types-publish
+  cd shared-types
+  git add .
+  git commit -m "update shared-types"
+  git push origin main
 ```
 
 <h3>Step 4 - using in other client</h3>
