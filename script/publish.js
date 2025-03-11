@@ -1,12 +1,10 @@
 #!/usr/bin/env node
-const { execSync } = require("child_process");
-const path = require("path");
-const fs = require("fs");
-
-const currentPath = process.cwd();
-const projectRoot = path.resolve(currentPath);
-const rootPath    = path.resolve(process.cwd(), "..", "..")
-
+const { execSync }    = require("child_process");
+const path            = require("path");
+const fs              = require("fs");
+const currentPath     = process.cwd();
+const projectRoot     = path.resolve(currentPath);
+const rootPath        = path.resolve(process.cwd(), "..", "..")
 const sharedTypesPath = path.join(rootPath, "node_modules", "@exsan172/shared-types");
 const typesFolder     = projectRoot;
 const sharedTypesSrc  = path.join(sharedTypesPath, "src");
@@ -19,6 +17,14 @@ if (!fs.existsSync(sharedTypesPath)) {
 
 fs.rmSync(sharedTypesSrc, { recursive: true, force: true });
 fs.cpSync(typesFolder, sharedTypesSrc, { recursive: true });
+
+const isMac   = process.platform === "darwin";
+const sedFlag = isMac ? "-i ''" : "-i";
+
+execSync(
+    `find ${sharedTypesPath}/src -type f -name "*.ts" -exec sed ${sedFlag} 's|@/|../../../../src/|g' {} +`,
+    { stdio: "inherit" }
+);
 
 console.log("Building @exsan172/shared-types...");
 

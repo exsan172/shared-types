@@ -29,10 +29,31 @@ npx github:exsan172/shared-types-init
       ...
 ```
 
-<span>And you can use in backend like :</span>
+<span>And you can use can install in backend :</span>
 
 ```
 npm i github:username/your-repo
+```
+
+<span>Add this config to tsconfig.json to use import types generally :</span>
+
+```
+{
+  "compilerOptions": {
+    ...
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  }
+}
+```
+
+<span>Example in file ```/src/types/index.ts``` to import generally :</span>
+
+```
+export * from "./person"
+export * from "@/models/user"
 ```
 
 <span>Import to your project</span>

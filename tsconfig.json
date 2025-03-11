@@ -9,11 +9,7 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "target": "ESNext",
-    "lib": ["ESNext"],
-    "baseUrl": "../",
-    "paths": {
-      "@/*": ["src/*"]
-    }
+    "lib": ["ESNext"]
   },
   "include": ["src"]
 }
