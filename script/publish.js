@@ -24,7 +24,7 @@ fs.rmSync(sharedTypesSrc, { recursive: true, force: true });
 // Copy semua file dari "types" ke dalam "src"
 fs.cpSync(typesFolder, sharedTypesSrc, { recursive: true });
 
-console.log("Files replaced! Building @exsan172/shared-types...");
+console.log("Building @exsan172/shared-types...");
 
 // clear dist
 fs.rmSync(sharedTypesDist, { recursive: true, force: true });
