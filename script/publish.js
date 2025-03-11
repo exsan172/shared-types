@@ -5,13 +5,11 @@ const fs = require("fs");
 
 const currentPath = process.cwd();
 const projectRoot = path.resolve(currentPath);
-const sharedTypesPath = path.join(projectRoot, "node_modules", "@exsan172/shared-types");
-const typesFolder = projectRoot;
-const sharedTypesSrc = path.join(sharedTypesPath, "src");
+const rootPath    = path.resolve(process.cwd(), "..", "..")
 
-console.log(`Current Path: ${currentPath}`);
-console.log(`Shared Types Path: ${sharedTypesPath}`);
-console.log(`Types Folder: ${typesFolder}`);
+const sharedTypesPath = path.join(rootPath, "node_modules", "@exsan172/shared-types");
+const typesFolder     = projectRoot;
+const sharedTypesSrc  = path.join(sharedTypesPath, "src");
 
 // Pastikan folder "shared-types" ada di node_modules
 if (!fs.existsSync(sharedTypesPath)) {
