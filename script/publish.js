@@ -10,6 +10,7 @@ const rootPath    = path.resolve(process.cwd(), "..", "..")
 const sharedTypesPath = path.join(rootPath, "node_modules", "@exsan172/shared-types");
 const typesFolder     = projectRoot;
 const sharedTypesSrc  = path.join(sharedTypesPath, "src");
+const sharedTypesDist = path.join(sharedTypesPath, "dist");
 
 // Pastikan folder "shared-types" ada di node_modules
 if (!fs.existsSync(sharedTypesPath)) {
@@ -24,6 +25,9 @@ fs.rmSync(sharedTypesSrc, { recursive: true, force: true });
 fs.cpSync(typesFolder, sharedTypesSrc, { recursive: true });
 
 console.log("Files replaced! Building @exsan172/shared-types...");
+
+// clear dist
+fs.rmSync(sharedTypesDist, { recursive: true, force: true });
 
 // Jalankan build TypeScript
 execSync("npm run build", { stdio: "inherit", cwd: sharedTypesPath });
