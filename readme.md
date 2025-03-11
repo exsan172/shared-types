@@ -1,8 +1,6 @@
 <h1>SHARED TYPES</h1>
 <span>This project aims to share types, enums and others in typescript in the frontend and backend so that they are consistent and there is no repetition of defining them again on the frontend or other backend.<span>
 <br/>
-
-<h2>USING IN BACKEND (Initialization)</h2>
 <h3>Step 1 - run this comand, and publish to your git</h3>
 
 ```
